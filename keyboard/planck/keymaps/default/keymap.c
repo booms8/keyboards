@@ -96,6 +96,8 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
         case 8:
             return MACRODOWN(TYPE(KC_V), TYPE(KC_I), TYPE(KC_M), TYPE(KC_SPC), END);
             break;
+
+        //GIT MACROS
         //git add -A
         case 9:
             return MACRODOWN(TYPE(KC_G), TYPE(KC_I), TYPE(KC_T), TYPE(KC_SPC), TYPE(KC_A), TYPE(KC_D), TYPE(KC_D), TYPE(KC_SPC), TYPE(KC_MINS), DOWN(KC_LSFT), TYPE(KC_A), UP(KC_LSFT), TYPE(KC_ENT), END);
