@@ -35,9 +35,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY}
     },
     [_SS] = { /* UNIX SHELL */
-        {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M(5),    M(6),    M(7),    M(8),    KC_TRNS},
-        {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M(1),    M(2),    M(3),    M(4),    KC_TRNS},
-        {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M(9),    M(10),   M(11),   KC_TRNS, KC_TRNS},
+        {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M(13),   M(5),    M(6),    M(7),    M(8),    KC_TRNS},
+        {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M(14),   M(1),    M(2),    M(3),    M(4),    KC_TRNS},
+        {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M(15),   M(9),    M(10),   M(11),   M(12),   KC_TRNS},
         {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS}
     }
 };
@@ -92,9 +92,9 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
         case 7:
             return MACRODOWN(TYPE(KC_S), TYPE(KC_U), TYPE(KC_D), TYPE(KC_O), TYPE(KC_SPC), END);
             break;
-        //git...
+        //vim...
         case 8:
-            return MACRODOWN(TYPE(KC_G), TYPE(KC_I), TYPE(KC_T), TYPE(KC_SPC), END);
+            return MACRODOWN(TYPE(KC_V), TYPE(KC_I), TYPE(KC_M), TYPE(KC_SPC), END);
             break;
         //git add -A
         case 9:
@@ -107,6 +107,22 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
         //git push
         case 11:
             return MACRODOWN(TYPE(KC_G), TYPE(KC_I), TYPE(KC_T), TYPE(KC_SPC), TYPE(KC_P), TYPE(KC_U), TYPE(KC_S), TYPE(KC_H), TYPE(KC_ENT), END);
+            break;
+        //git...
+        case 12:
+            return MACRODOWN(TYPE(KC_G), TYPE(KC_I), TYPE(KC_T), TYPE(KC_SPC), END);
+            break;
+        //git status
+        case 13:
+            return MACRODOWN(TYPE(KC_G), TYPE(KC_I), TYPE(KC_T), TYPE(KC_SPC), TYPE(KC_S), TYPE(KC_T), TYPE(KC_A), TYPE(KC_T), TYPE(KC_U), TYPE(KC_S), TYPE(KC_ENT), END);
+            break;
+        //git fetch
+        case 14:
+            return MACRODOWN(TYPE(KC_G), TYPE(KC_I), TYPE(KC_T), TYPE(KC_SPC), TYPE(KC_F), TYPE(KC_E), TYPE(KC_T), TYPE(KC_C), TYPE(KC_H), TYPE(KC_ENT), END);
+            break;
+        //git pull
+        case 15:
+            return MACRODOWN(TYPE(KC_G), TYPE(KC_I), TYPE(KC_T), TYPE(KC_SPC), TYPE(KC_P), TYPE(KC_U), TYPE(KC_L), TYPE(KC_L), TYPE(KC_ENT), END);
             break;
       }
     return MACRO_NONE;
