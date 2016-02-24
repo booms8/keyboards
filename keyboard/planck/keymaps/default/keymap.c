@@ -76,9 +76,9 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
         case 3:
             return MACRODOWN(TYPE(KC_C), TYPE(KC_D), TYPE(KC_SPC), TYPE(KC_DOT), TYPE(KC_DOT), TYPE(KC_SLSH), TYPE(KC_ENT), END);
             break;
-        //cd ~
+        //clear
         case 4:
-            return MACRODOWN(TYPE(KC_C), TYPE(KC_D), TYPE(KC_SPC), DOWN(KC_LSFT), TYPE(KC_TILD), UP(KC_LSFT), TYPE(KC_ENT), END);
+            return MACRODOWN(TYPE(KC_C), TYPE(KC_L), TYPE(KC_E), TYPE(KC_A), TYPE(KC_R), TYPE(KC_ENT), END);
             break;
         //ls...
         case 5:
