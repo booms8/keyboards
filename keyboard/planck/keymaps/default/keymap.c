@@ -35,9 +35,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY}
     },
     [_SS] = { /* UNIX SHELL */
-        {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M(13),   M(5),    M(6),    M(7),    M(8),    KC_TRNS},
-        {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M(14),   M(1),    M(2),    M(3),    M(4),    KC_TRNS},
-        {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M(15),   M(9),    M(10),   M(11),   M(12),   KC_TRNS},
+        {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M(16),   M(13),   M(5),    M(6),    M(7),    M(8),    KC_TRNS},
+        {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M(17),   M(14),   M(1),    M(2),    M(3),    M(4),    KC_TRNS},
+        {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M(18),   M(15),   M(9),    M(10),   M(11),   M(12),   KC_TRNS},
         {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS}
     }
 };
@@ -125,6 +125,20 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
         //git pull
         case 15:
             return MACRODOWN(TYPE(KC_G), TYPE(KC_I), TYPE(KC_T), TYPE(KC_SPC), TYPE(KC_P), TYPE(KC_U), TYPE(KC_L), TYPE(KC_L), TYPE(KC_ENT), END);
+            break;
+
+        //APT-GET MACROS
+        //apt-get update
+        case 16:
+            return MACRODOWN(TYPE(KC_S), TYPE(KC_U), TYPE(KC_D), TYPE(KC_O), TYPE(KC_SPC), TYPE(KC_A), TYPE(KC_P), TYPE(KC_T), TYPE(KC_MINS), TYPE(KC_G), TYPE(KC_E), TYPE(KC_T), TYPE(KC_SPC), TYPE(KC_U), TYPE(KC_P), TYPE(KC_D), TYPE(KC_A), TYPE(KC_T), TYPE(KC_E), TYPE(KC_ENT), END);
+            break;
+        //apt-get upgrade
+        case 17:
+            return MACRODOWN(TYPE(KC_S), TYPE(KC_U), TYPE(KC_D), TYPE(KC_O), TYPE(KC_SPC), TYPE(KC_A), TYPE(KC_P), TYPE(KC_T), TYPE(KC_MINS), TYPE(KC_G), TYPE(KC_E), TYPE(KC_T), TYPE(KC_SPC), TYPE(KC_U), TYPE(KC_P), TYPE(KC_G), TYPE(KC_R), TYPE(KC_A), TYPE(KC_D), TYPE(KC_E), TYPE(KC_ENT), END);
+            break;
+        //apt-get install...
+        case 18:
+            return MACRODOWN(TYPE(KC_S), TYPE(KC_U), TYPE(KC_D), TYPE(KC_O), TYPE(KC_SPC), TYPE(KC_A), TYPE(KC_P), TYPE(KC_T), TYPE(KC_MINS), TYPE(KC_G), TYPE(KC_E), TYPE(KC_T), TYPE(KC_SPC), TYPE(KC_I), TYPE(KC_N), TYPE(KC_S), TYPE(KC_T), TYPE(KC_A), TYPE(KC_L), TYPE(KC_L), TYPE(KC_SPC), END);
             break;
       }
     return MACRO_NONE;
